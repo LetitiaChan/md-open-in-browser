@@ -1,0 +1,60 @@
+{
+  "name": "md-open-in-browser",
+  "displayName": "Markdown Open in Browser",
+  "description": "右键在浏览器中直接打开 Markdown 文件 — 支持编辑器、标签页、资源管理器右键菜单",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": ["Other"],
+  "keywords": [
+    "markdown",
+    "browser",
+    "open",
+    "preview",
+    "md"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "md.openInBrowser",
+        "title": "在浏览器中打开 Markdown"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "md.openInBrowser",
+          "when": "resourceExtname == .md",
+          "group": "navigation"
+        }
+      ],
+      "editor/title/context": [
+        {
+          "command": "md.openInBrowser",
+          "when": "resourceExtname == .md",
+          "group": "navigation"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "md.openInBrowser",
+          "when": "resourceExtname == .md",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "^18.0.0",
+    "typescript": "^5.0.0"
+  }
+}
