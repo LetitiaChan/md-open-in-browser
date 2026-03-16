@@ -2,7 +2,7 @@
   "name": "md-open-in-browser",
   "displayName": "Markdown Open in Browser",
   "description": "Open Markdown (.md) files in your default browser with one right-click. Lightweight, zero-config, supports Windows/macOS/Linux.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "icon": "icon.png",
   "publisher": "letitia",
   "repository": {
