@@ -1,18 +1,35 @@
 {
   "name": "md-open-in-browser",
   "displayName": "Markdown Open in Browser",
-  "description": "右键在浏览器中直接打开 Markdown 文件 — 支持编辑器、标签页、资源管理器右键菜单",
-  "version": "0.0.1",
+  "description": "Open Markdown (.md) files in your default browser with one right-click. Lightweight, zero-config, supports Windows/macOS/Linux.",
+  "version": "1.0.0",
+  "icon": "icon.png",
+  "publisher": "letitia",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LetitiaChan/md-open-in-browser"
+  },
   "engines": {
     "vscode": "^1.74.0"
   },
-  "categories": ["Other"],
+  "categories": ["Programming Languages", "Other"],
   "keywords": [
     "markdown",
     "browser",
-    "open",
     "preview",
+    "open in browser",
     "md"
+  ],
+  "galleryBanner": {
+    "color": "#1e1e1e",
+    "theme": "dark"
+  },
+  "badges": [
+    {
+      "url": "https://img.shields.io/github/stars/LetitiaChan/md-open-in-browser?style=social",
+      "href": "https://github.com/LetitiaChan/md-open-in-browser",
+      "description": "GitHub Stars"
+    }
   ],
   "activationEvents": [],
   "main": "./out/extension.js",
@@ -20,7 +37,7 @@
     "commands": [
       {
         "command": "md.openInBrowser",
-        "title": "在浏览器中打开 Markdown"
+        "title": "Open Markdown in Browser"
       }
     ],
     "menus": {

@@ -1,0 +1,22 @@
+# 依赖目录
+node_modules/
+
+# 编译输出
+out/
+dist/
+
+# Source Map 文件
+*.js.map
+
+# 打包产物
+*.vsix
+
+# VS Code 工作区配置
+.vscode/
+
+# VS Code 测试运行时
+.vscode-test/
+
+# 系统文件
+.DS_Store
+Thumbs.db
