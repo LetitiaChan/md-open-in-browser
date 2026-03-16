@@ -2,7 +2,7 @@
   "name": "md-open-in-browser",
   "displayName": "Markdown Open in Browser",
   "description": "Open Markdown (.md) files in your default browser with one right-click. Lightweight, zero-config, supports Windows/macOS/Linux.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "icon": "icon.png",
   "publisher": "letitia",
   "repository": {
@@ -12,7 +12,10 @@
   "engines": {
     "vscode": "^1.74.0"
   },
-  "categories": ["Programming Languages", "Other"],
+  "categories": [
+    "Programming Languages",
+    "Other"
+  ],
   "keywords": [
     "markdown",
     "browser",
