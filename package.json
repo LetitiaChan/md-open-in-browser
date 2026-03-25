@@ -2,7 +2,7 @@
   "name": "md-open-in-browser",
   "displayName": "Markdown / HTML Open in Browser",
   "description": "Open Markdown (.md/.mdc) and HTML (.html/.htm) files in your default browser with one right-click. Lightweight, zero-config, supports Windows/macOS/Linux.",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "icon": "icon.png",
   "publisher": "letitia",
   "repository": {

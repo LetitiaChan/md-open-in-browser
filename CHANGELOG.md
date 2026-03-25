@@ -2,6 +2,12 @@
 
 All notable changes to the "Markdown / HTML Open in Browser" extension will be documented in this file.
 
+## [1.1.1] - 2026-03-25
+
+### Changed
+
+- 🎨 Updated extension icon (removed watermark, transparent background)
+
 ## [1.1.0] - 2026-03-25
 
 ### Added
