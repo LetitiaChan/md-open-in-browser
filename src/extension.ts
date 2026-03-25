@@ -42,42 +42,50 @@ export function activate(context: vscode.ExtensionContext) {
       const fileUri = uri || vscode.window.activeTextEditor?.document.uri;
 
       if (!fileUri) {
-        vscode.window.showWarningMessage('没有找到可打开的 Markdown 文件');
+        vscode.window.showWarningMessage('没有找到可打开的文件');
         return;
       }
 
-      // 确保是 .md 或 .mdc 文件
+      // 支持的文件类型：.md / .mdc / .html / .htm
       const lowerPath = fileUri.fsPath.toLowerCase();
-      if (!lowerPath.endsWith('.md') && !lowerPath.endsWith('.mdc')) {
-        vscode.window.showWarningMessage('当前文件不是 Markdown 文件');
+      const supportedExts = ['.md', '.mdc', '.html', '.htm'];
+      if (!supportedExts.some(ext => lowerPath.endsWith(ext))) {
+        vscode.window.showWarningMessage('当前文件不是 Markdown 或 HTML 文件');
         return;
       }
 
       const filePath = fileUri.fsPath;
+      const isHtml = lowerPath.endsWith('.html') || lowerPath.endsWith('.htm');
       // 将本地路径转为 file:/// URL
       const fileUrl = 'file:///' + filePath.replace(/\\/g, '/');
 
       let cmd: string;
       switch (process.platform) {
         case 'win32': {
-          // Windows 上 .md 文件关联的通常是 VS Code/记事本，不是浏览器
-          // 必须找到浏览器可执行文件路径，直接调用浏览器打开
-          const browserPath = findWindowsDefaultBrowser();
-          if (browserPath) {
-            cmd = `"${browserPath}" "${fileUrl}"`;
+          if (isHtml) {
+            // HTML 文件在 Windows 上通常已关联浏览器，可直接用 start 打开
+            cmd = `start "" "${filePath}"`;
           } else {
-            // 兜底：尝试常见浏览器路径
-            vscode.window.showWarningMessage('未找到默认浏览器，尝试使用 Edge 打开');
-            cmd = `"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe" "${fileUrl}"`;
+            // Markdown 文件在 Windows 上关联的通常是 VS Code/记事本，不是浏览器
+            // 必须找到浏览器可执行文件路径，直接调用浏览器打开
+            const browserPath = findWindowsDefaultBrowser();
+            if (browserPath) {
+              cmd = `"${browserPath}" "${fileUrl}"`;
+            } else {
+              // 兜底：尝试常见浏览器路径
+              vscode.window.showWarningMessage('未找到默认浏览器，尝试使用 Edge 打开');
+              cmd = `"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe" "${fileUrl}"`;
+            }
           }
           break;
         }
         case 'darwin':
-          // macOS: open -a 指定用默认浏览器而非文件关联程序
-          cmd = `open -a "Safari" "${fileUrl}"`;
+          cmd = isHtml
+            ? `open "${filePath}"`
+            : `open -a "Safari" "${fileUrl}"`;
           break;
         default:
-          cmd = `xdg-open "${fileUrl}"`;
+          cmd = `xdg-open "${isHtml ? filePath : fileUrl}"`;
           break;
       }
 

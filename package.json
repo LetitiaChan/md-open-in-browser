@@ -1,8 +1,8 @@
 {
   "name": "md-open-in-browser",
-  "displayName": "Markdown Open in Browser",
-  "description": "Open Markdown (.md) files in your default browser with one right-click. Lightweight, zero-config, supports Windows/macOS/Linux.",
-  "version": "1.0.2",
+  "displayName": "Markdown / HTML Open in Browser",
+  "description": "Open Markdown (.md/.mdc) and HTML (.html/.htm) files in your default browser with one right-click. Lightweight, zero-config, supports Windows/macOS/Linux.",
+  "version": "1.1.0",
   "icon": "icon.png",
   "publisher": "letitia",
   "repository": {
@@ -18,10 +18,12 @@
   ],
   "keywords": [
     "markdown",
+    "html",
     "browser",
     "preview",
     "open in browser",
-    "md"
+    "md",
+    "htm"
   ],
   "galleryBanner": {
     "color": "#1e1e1e",
@@ -40,28 +42,28 @@
     "commands": [
       {
         "command": "md.openInBrowser",
-        "title": "Open Markdown in Browser"
+        "title": "Open in Browser"
       }
     ],
     "menus": {
       "editor/context": [
         {
           "command": "md.openInBrowser",
-          "when": "resourceExtname == .md || resourceExtname == .mdc",
+          "when": "resourceExtname == .md || resourceExtname == .mdc || resourceExtname == .html || resourceExtname == .htm",
           "group": "navigation"
         }
       ],
       "editor/title/context": [
         {
           "command": "md.openInBrowser",
-          "when": "resourceExtname == .md || resourceExtname == .mdc",
+          "when": "resourceExtname == .md || resourceExtname == .mdc || resourceExtname == .html || resourceExtname == .htm",
           "group": "navigation"
         }
       ],
       "explorer/context": [
         {
           "command": "md.openInBrowser",
-          "when": "resourceExtname == .md || resourceExtname == .mdc",
+          "when": "resourceExtname == .md || resourceExtname == .mdc || resourceExtname == .html || resourceExtname == .htm",
           "group": "navigation"
         }
       ]

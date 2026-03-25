@@ -1,33 +1,33 @@
-# Markdown Open in Browser
+# Markdown / HTML Open in Browser
 
 **[English](README.md)**
 
-> 一键在浏览器中打开 Markdown 文件，简单、快速、无需额外配置。
-> 推荐搭配浏览器插件 [Markdown Viewer Enhanced](https://chromewebstore.google.com/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk) 一起食用。
+> 一键在浏览器中打开 Markdown 和 HTML 文件，简单、快速、无需额外配置。
+> Markdown 渲染推荐搭配浏览器插件 [Markdown Viewer Enhanced](https://chromewebstore.google.com/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk) 一起食用。
 
 ## ✨ 功能介绍
 
-**Markdown Open in Browser** 是一个轻量级的 VS Code 扩展，允许你通过右键菜单直接在浏览器中打开当前的 Markdown (`.md`) 文件。
+**Markdown / HTML Open in Browser** 是一个轻量级的 VS Code 扩展，允许你通过右键菜单直接在浏览器中打开当前的 Markdown (`.md` / `.mdc`) 或 HTML (`.html` / `.htm`) 文件。
 
 无需启动本地服务器，无需复杂的配置 —— 右键点击即可打开。
 
 ## 📖 使用方式
 
-安装扩展后，在以下任意位置**右键**，选择 **「在浏览器中打开 Markdown」** 即可：
+安装扩展后，在以下任意位置**右键**，选择 **「Open in Browser」** 即可：
 
 | 触发位置 | 说明 |
 | --- | --- |
-| 📝 **编辑器右键菜单** | 在已打开的 `.md` 文件编辑区域内右键 |
+| 📝 **编辑器右键菜单** | 在已打开的 `.md` / `.html` 文件编辑区域内右键 |
 | 🏷️ **编辑器标签页右键菜单** | 在编辑器顶部的文件标签页上右键 |
-| 📁 **资源管理器右键菜单** | 在左侧文件资源管理器中的 `.md` 文件上右键 |
+| 📁 **资源管理器右键菜单** | 在左侧文件资源管理器中的 `.md` / `.html` 文件上右键 |
 
-> 💡 右键菜单项仅在当前文件为 `.md` 格式时显示。
+> 💡 右键菜单项仅在当前文件为 `.md`、`.mdc`、`.html` 或 `.htm` 格式时显示。
 
 ## 🔧 命令列表
 
 | 命令 | 标题 |
 | --- | --- |
-| `md.openInBrowser` | 在浏览器中打开 Markdown |
+| `md.openInBrowser` | Open in Browser |
 
 ## 📋 环境要求
 
@@ -38,11 +38,11 @@
 
 | 平台 | 打开方式 |
 | --- | --- |
-| **Windows** | 自动通过注册表查找系统默认浏览器（如 Edge、Chrome、Firefox 等）并直接调用，确保不会被 `.md` 文件关联程序拦截 |
-| **macOS** | 通过 `open -a "Safari"` 使用 Safari 打开 |
+| **Windows** | **HTML**：通过系统文件关联直接打开（默认浏览器）。**Markdown**：自动通过注册表查找系统默认浏览器并直接调用，绕过 `.md` 文件关联 |
+| **macOS** | **HTML**：通过 `open` 使用默认浏览器打开。**Markdown**：通过 `open -a "Safari"` 使用 Safari 打开 |
 | **Linux** | 通过 `xdg-open` 使用系统默认浏览器打开 |
 
-> ⚠️ Windows 上 `.md` 文件通常关联的是 VS Code 或记事本，本插件绕过了文件关联机制，直接查找并调用浏览器可执行文件来打开。
+> ⚠️ Windows 上 `.md` 文件通常关联的是 VS Code 或记事本，本插件绕过了文件关联机制，直接查找并调用浏览器可执行文件来打开。HTML 文件则直接通过系统文件关联正常打开。
 
 ## ❓ 常见问题
 
