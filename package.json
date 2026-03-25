@@ -1,0 +1,80 @@
+{
+  "name": "md-open-in-browser",
+  "displayName": "Markdown Open in Browser",
+  "description": "Open Markdown (.md) files in your default browser with one right-click. Lightweight, zero-config, supports Windows/macOS/Linux.",
+  "version": "1.0.2",
+  "icon": "icon.png",
+  "publisher": "letitia",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LetitiaChan/md-open-in-browser"
+  },
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Other"
+  ],
+  "keywords": [
+    "markdown",
+    "browser",
+    "preview",
+    "open in browser",
+    "md"
+  ],
+  "galleryBanner": {
+    "color": "#1e1e1e",
+    "theme": "dark"
+  },
+  "badges": [
+    {
+      "url": "https://img.shields.io/github/stars/LetitiaChan/md-open-in-browser?style=social",
+      "href": "https://github.com/LetitiaChan/md-open-in-browser",
+      "description": "GitHub Stars"
+    }
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "md.openInBrowser",
+        "title": "Open Markdown in Browser"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "md.openInBrowser",
+          "when": "resourceExtname == .md || resourceExtname == .mdc",
+          "group": "navigation"
+        }
+      ],
+      "editor/title/context": [
+        {
+          "command": "md.openInBrowser",
+          "when": "resourceExtname == .md || resourceExtname == .mdc",
+          "group": "navigation"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "md.openInBrowser",
+          "when": "resourceExtname == .md || resourceExtname == .mdc",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "^18.0.0",
+    "typescript": "^5.0.0"
+  }
+}
