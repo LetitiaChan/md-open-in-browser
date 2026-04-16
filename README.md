@@ -1,3 +1,77 @@
+<a id="english"></a>
+
+# Markdown / HTML Open in Browser
+
+**[中文文档](#中文文档)**
+
+> Open Markdown and HTML files in your browser with one click — simple, fast, no extra configuration needed.
+> For Markdown rendering, recommended to use with browser extension [Markdown Viewer Enhanced] for best experience.
+
+## ✨ Features
+
+**Markdown / HTML Open in Browser** is a lightweight VS Code extension that allows you to open the current Markdown (`.md` / `.mdc`) or HTML (`.html` / `.htm`) file directly in your browser via the right-click context menu.
+
+No local server needed, no complex configuration — just right-click and open.
+
+## 📖 Usage
+
+After installing the extension, **right-click** in any of the following locations and select **"Open in Browser"**:
+
+| Trigger Location | Description |
+| --- | --- |
+| 📝 **Editor Context Menu** | Right-click inside an open `.md` / `.html` file |
+| 🏷️ **Editor Tab Context Menu** | Right-click on a file tab at the top of the editor |
+| 📁 **Explorer Context Menu** | Right-click on a `.md` / `.html` file in the file explorer sidebar |
+
+> 💡 The context menu item only appears when the current file has a `.md`, `.mdc`, `.html`, or `.htm` extension.
+
+## 🔧 Commands
+
+| Command | Title |
+| --- | --- |
+| `md.openInBrowser` | Open in Browser |
+
+## 📋 Requirements
+
+- **VS Code** version `≥ 1.74.0`
+- A default browser installed on your system
+
+## 🖥️ Platform Support
+
+| Platform | How It Opens |
+| --- | --- |
+| **Windows** | **HTML**: Opens via system file association (default browser). **Markdown**: Automatically detects the system default browser via the Windows registry and launches it directly, bypassing `.md` file associations |
+| **macOS** | **HTML**: Opens with default browser via `open`. **Markdown**: Opens with Safari via `open -a "Safari"` |
+| **Linux** | Opens with the system default browser via `xdg-open` |
+
+> ⚠️ On Windows, `.md` files are usually associated with VS Code or Notepad. This extension bypasses the file association mechanism and directly locates and calls the browser executable to open the file. HTML files are opened normally via system file association.
+
+## ❓ FAQ
+
+### Why does the browser show raw Markdown source instead of a rendered page?
+
+This extension opens the raw `.md` file in the browser using the `file://` protocol. Most browsers don't render Markdown by default. You can install a browser Markdown rendering extension for a better experience:
+- Edge: [Markdown Viewer Enhanced](https://microsoftedge.microsoft.com/addons/detail/markdown-viewer-enhanced/caoodfcjdkgfninkhdacaaoepkpcdobg)
+- Chrome: [Markdown Viewer Enhanced](https://chromewebstore.google.com/detail/markdown-viewer-enhanced/npkdnfckfojepijghokdpeegnpebenem)
+
+💡 After installing the browser extension, go to the browser's **Extensions Management** page, find the extension, and enable **"Allow access to file URLs"** — otherwise local Markdown files opened via `file://` won't be rendered.
+
+### What if the default browser is not found on Windows?
+
+If the default browser cannot be detected from the registry, the extension will fall back to Microsoft Edge's default installation path. If that also fails, please ensure your system has a default browser properly configured.
+
+### Which operating systems are supported?
+
+All platforms supported by VS Code: Windows, macOS, and Linux.
+
+## 📄 License
+
+MIT
+
+---
+
+<a id="中文文档"></a>
+
 # Markdown / HTML Open in Browser
 
 **[English](#english)**
@@ -50,7 +124,7 @@
 
 本扩展使用 `file://` 协议直接在浏览器中打开原始 `.md` 文件。大多数浏览器默认不会渲染 Markdown 格式，你可以安装浏览器 Markdown 渲染插件来获得渲染效果。
 - Edge 的 [Markdown Viewer Enhanced](https://microsoftedge.microsoft.com/addons/detail/markdown-viewer-enhanced/caoodfcjdkgfninkhdacaaoepkpcdobg)
-- Chrome 的 [Markdown Viewer Enhanced](https://chromewebstore.google.com/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk)
+- Chrome 的 [Markdown Viewer Enhanced](https://chromewebstore.google.com/detail/markdown-viewer-enhanced/npkdnfckfojepijghokdpeegnpebenem)
 
 💡 安装浏览器插件后，需要进入浏览器的**扩展管理页面**，找到对应插件，开启 **「允许访问文件URL」**（Allow access to file URLs）选项，否则通过 `file://` 协议打开的本地 Markdown 文件将无法被渲染。
 
@@ -63,77 +137,5 @@
 支持所有 VS Code 支持的平台：Windows、macOS 和 Linux。
 
 ## 📄 许可证
-
-MIT
-
----
-
-<a id="english"></a>
-
-# Markdown / HTML Open in Browser
-
-**[中文文档](#markdown--html-open-in-browser)**
-
-> Open Markdown and HTML files in your browser with one click — simple, fast, no extra configuration needed.
-> For Markdown rendering, recommended to use with browser extension [Markdown Viewer Enhanced](https://chromewebstore.google.com/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk) for best experience.
-
-## ✨ Features
-
-**Markdown / HTML Open in Browser** is a lightweight VS Code extension that allows you to open the current Markdown (`.md` / `.mdc`) or HTML (`.html` / `.htm`) file directly in your browser via the right-click context menu.
-
-No local server needed, no complex configuration — just right-click and open.
-
-## 📖 Usage
-
-After installing the extension, **right-click** in any of the following locations and select **"Open in Browser"**:
-
-| Trigger Location | Description |
-| --- | --- |
-| 📝 **Editor Context Menu** | Right-click inside an open `.md` / `.html` file |
-| 🏷️ **Editor Tab Context Menu** | Right-click on a file tab at the top of the editor |
-| 📁 **Explorer Context Menu** | Right-click on a `.md` / `.html` file in the file explorer sidebar |
-
-> 💡 The context menu item only appears when the current file has a `.md`, `.mdc`, `.html`, or `.htm` extension.
-
-## 🔧 Commands
-
-| Command | Title |
-| --- | --- |
-| `md.openInBrowser` | Open in Browser |
-
-## 📋 Requirements
-
-- **VS Code** version `≥ 1.74.0`
-- A default browser installed on your system
-
-## 🖥️ Platform Support
-
-| Platform | How It Opens |
-| --- | --- |
-| **Windows** | **HTML**: Opens via system file association (default browser). **Markdown**: Automatically detects the system default browser via the Windows registry and launches it directly, bypassing `.md` file associations |
-| **macOS** | **HTML**: Opens with default browser via `open`. **Markdown**: Opens with Safari via `open -a "Safari"` |
-| **Linux** | Opens with the system default browser via `xdg-open` |
-
-> ⚠️ On Windows, `.md` files are usually associated with VS Code or Notepad. This extension bypasses the file association mechanism and directly locates and calls the browser executable to open the file. HTML files are opened normally via system file association.
-
-## ❓ FAQ
-
-### Why does the browser show raw Markdown source instead of a rendered page?
-
-This extension opens the raw `.md` file in the browser using the `file://` protocol. Most browsers don't render Markdown by default. You can install a browser Markdown rendering extension for a better experience:
-- Edge: [Markdown Viewer Enhanced](https://microsoftedge.microsoft.com/addons/detail/markdown-viewer-enhanced/caoodfcjdkgfninkhdacaaoepkpcdobg)
-- Chrome: [Markdown Viewer Enhanced](https://chromewebstore.google.com/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk)
-
-💡 After installing the browser extension, go to the browser's **Extensions Management** page, find the extension, and enable **"Allow access to file URLs"** — otherwise local Markdown files opened via `file://` won't be rendered.
-
-### What if the default browser is not found on Windows?
-
-If the default browser cannot be detected from the registry, the extension will fall back to Microsoft Edge's default installation path. If that also fails, please ensure your system has a default browser properly configured.
-
-### Which operating systems are supported?
-
-All platforms supported by VS Code: Windows, macOS, and Linux.
-
-## 📄 License
 
 MIT

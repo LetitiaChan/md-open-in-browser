@@ -2,6 +2,18 @@
 
 All notable changes to the "Markdown / HTML Open in Browser" extension will be documented in this file.
 
+## [1.2.0] - 2026-04-17
+
+### Changed
+
+- 📝 Reorganized README: English section first, Chinese section second
+- 🔗 Fixed English anchor link not working in bilingual README
+
+### Removed
+
+- 🗑️ Removed unused multi-size icon PNGs from `icons/` directory
+- 🗑️ Removed `generate-icons.js` script (no longer needed)
+
 ## [1.1.1] - 2026-03-25
 
 ### Changed
