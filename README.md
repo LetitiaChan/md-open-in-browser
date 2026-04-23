@@ -2,6 +2,10 @@
 
 # Markdown / HTML Open in Browser
 
+[![GitHub stars](https://img.shields.io/github/stars/LetitiaChan/md-open-in-browser?style=social)](https://github.com/LetitiaChan/md-open-in-browser)
+[![Version](https://img.shields.io/visual-studio-marketplace/v/letitia.md-open-in-browser?label=VS%20Marketplace&color=blue)](https://marketplace.visualstudio.com/items?itemName=letitia.md-open-in-browser)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/LetitiaChan/md-open-in-browser/blob/main/LICENSE)
+
 **[中文文档](#中文文档)**
 
 > Open Markdown and HTML files in your browser with one click — simple, fast, no extra configuration needed.
@@ -73,6 +77,10 @@ MIT
 <a id="中文文档"></a>
 
 # Markdown / HTML Open in Browser
+
+[![GitHub stars](https://img.shields.io/github/stars/LetitiaChan/md-open-in-browser?style=social)](https://github.com/LetitiaChan/md-open-in-browser)
+[![Version](https://img.shields.io/visual-studio-marketplace/v/letitia.md-open-in-browser?label=VS%20Marketplace&color=blue)](https://marketplace.visualstudio.com/items?itemName=letitia.md-open-in-browser)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/LetitiaChan/md-open-in-browser/blob/main/LICENSE)
 
 **[English](#english)**
 

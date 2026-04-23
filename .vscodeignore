@@ -1,9 +1,24 @@
+# 源码与配置（不需要打入 VSIX）
+src/**
+**/*.ts
+tsconfig.json
+esbuild.js
+
+# 旧编译产物
+out/**
+
+# 开发相关
 .vscode/**
 .vscode-test/**
-src/**
+.github/**
 .gitignore
-tsconfig.json
+node_modules/**
+package-lock.json
+
+# Source Map
 **/*.map
+
+# Markdown（保留 README 和 CHANGELOG）
 *.md
 !README.md
 !README.zh-CN.md
